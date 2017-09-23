@@ -25,6 +25,7 @@ Builds the app for macOS, Linux, and Windows, using [electron-packager](https://
 
 ## Credits
 App icon originally desgined by Freepik from www.Flaticon.com
+
 Tray icon originally designed by Dave Gandy from www.Flaticon.com
 
 ## License
