@@ -1,0 +1,100 @@
+html,
+body {
+	background: #696969;
+	height: 525px;
+	overflow: hidden;
+    width: 368px;
+	-webkit-app-region: drag;
+	-webkit-user-select: none;
+}
+#main {
+	background: #A8A8A8;
+	border-bottom: 1px solid #989898;
+	border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 500px;
+}
+
+.speaker {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.speaker img {
+    height: 194px;
+    width: 274px;
+}
+
+@font-face{
+	font-family:'Arista';
+	src: url('../fonts/Arista-Pro-Alternate-Regular-trial.ttf')  format('truetype');
+}
+
+.logo {
+	font-family: 'Arista';
+    font-size: 3em;
+    text-align: right;
+    margin-right: 0.8em;
+}
+.buttons {
+    padding: 0 20px;
+}
+
+.buttons > div {
+    text-align: center;
+}
+
+.button-sound{
+	display: flex;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.center {
+	margin: 0 auto;
+}
+.select-button {
+	width: 130px;
+	height: 110px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 50%;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f74d4d), color-stop(100%, #e53935));
+	box-shadow: 0 15px #b71c1c;
+}
+.center .select-button:active {
+	box-shadow: 0 0 #b71c1c;
+	-webkit-transform: translate(0px, 15px);
+	-webkit-transition: 0.1s all ease-out;
+	transition: 0.1s all ease-out;
+}
+
+.settings,
+.close {
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    position: absolute;
+    text-indent: -10000px;
+    top: 6px;
+    width: 32px;
+    z-index: 1;
+    -webkit-app-region: no-drag;
+}
+
+.close:focus, .close:hover{
+	opacity: 1;
+}
+
+.settings {
+    background: transparent url('../img/settings.png') no-repeat 4px 4px;
+    background-size: 24px 24px;
+    right: 38px;
+}
+
+.close {
+    background: transparent url('../img/close.png') no-repeat 4px 4px;
+    background-size: 24px 24px;
+	right: 6px;
+	opacity: 1;
+}

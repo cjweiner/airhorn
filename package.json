@@ -1,0 +1,32 @@
+{
+  "name": "airhorn",
+  "productName": "Airhorn",
+  "version": "0.1.0",
+  "description": "It's an air horn.",
+  "license": "MIT",
+  "repository": "cjweiner/airhorn",
+  "author": {
+    "name": "Corey Weiner",
+    "email": "cjweiner@gmail.com",
+    "url": "corey-weiner.com"
+  },
+  "main": "./main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-packager . --out=dist --asar=true --overwrite --platform=darwin --arch=x64 --prune=true --icon='./app/img/app-icon.icns'",
+    "build-win": "electron-packager . --out=dist --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --icon='./app/img/app-icon.ico'"
+  },
+  "keywords": [
+    "electron-app",
+    "electron"
+  ],
+  "dependencies": {
+    "electron-debug": "^1.0.0",
+    "nconf": "^0.8.4"
+  },
+  "devDependencies": {
+    "devtron": "^1.1.0",
+    "electron-packager": "^8.0.0",
+    "electron": "^1.6.2"
+  }
+}
