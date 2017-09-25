@@ -60,13 +60,15 @@ body {
 	cursor: pointer;
 	border-radius: 50%;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f74d4d), color-stop(100%, #e53935));
-	box-shadow: 0 15px #b71c1c;
+    box-shadow: 0 15px #b71c1c;
+    -webkit-app-region: no-drag;
 }
 .center .select-button:active {
 	box-shadow: 0 0 #b71c1c;
 	-webkit-transform: translate(0px, 15px);
 	-webkit-transition: 0.1s all ease-out;
-	transition: 0.1s all ease-out;
+    transition: 0.1s all ease-out;
+    -webkit-app-region: no-drag;
 }
 
 .settings,
