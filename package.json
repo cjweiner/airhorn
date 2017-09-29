@@ -14,7 +14,9 @@
   "scripts": {
     "start": "electron .",
     "build-mac": "electron-packager . --out=dist --asar --overwrite --platform=darwin --arch=x64 --prune=true --icon='./app/img/app-icon.icns'",
-    "buildwin": "electron-packager . --out=dist --overwrite --asar --platform=win32 --arch=ia32 --prune=true --icon=./app/img/app-icon.ico"
+    "build-win": "electron-packager . --out=dist --overwrite --asar --platform=win32 --arch=ia32 --prune=true --icon=./app/img/app-icon.ico",
+    "build-linux": "electron-packager . --out=dist --overwrite --asar --platform=linux --arch=x64 --prune=true --icon=./app/img/app-icon.png",
+    "build-all": "npm run build-win && npm run build-mac && npm run build-linux"
   },
   "keywords": [
     "electron-app",
@@ -26,7 +28,7 @@
   },
   "devDependencies": {
     "devtron": "^1.1.0",
-    "electron-packager": "^8.0.0",
-    "electron": "^1.6.2"
+    "electron": "1.7.8",
+    "electron-packager": "^8.0.0"
   }
 }

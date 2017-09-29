@@ -1,14 +1,21 @@
 'use strict';
-const electron = require('electron');
+
+const autoUpdate = require('electron').autoUpdater;
+const appVersion = require("./package.json").appVersion;
+const env = require('./package.json').config.environment;
+const os = require("os").platform();
 const path = require('path');
 
-const app = electron.app;
-const ipc = electron.ipcMain;
-const globalShortcut = electron.globalShortcut;
+const app = require('electron').app;
+const ipc = require('electron').ipcMain;
+const globalShortcut = require('electron').globalShortcut;
 const configuration = require('./config');
+const BrowserWindow = require('electron').BrowserWindow;
 
 // adds debug features like hotkeys for triggering dev tools and reload
-require('electron-debug')();
+if(process.env.NODE_ENV == "dev"){
+	require('electron-debug')();
+}
 
 // prevent window being garbage collected
 let mainWindow;
@@ -21,7 +28,7 @@ function onClosed() {
 }
 
 function createMainWindow() {
-	const win = new electron.BrowserWindow({
+	const win = new BrowserWindow({
 		width: 368,
 		height: 525,
 		frame: false,
@@ -37,7 +44,13 @@ function createMainWindow() {
 }
 
 ipc.on('close-main-window', () => {
-	app.quit();
+	console.log(process.env.NODE_ENV);
+	if(process.platform == "darwin"){
+		mainWindow.hide();
+	}
+	else{
+		app.quit();
+	}
 });
 
 ipc.on('open-settings-window',() => {
@@ -45,7 +58,7 @@ ipc.on('open-settings-window',() => {
 		return;
 	}
 
-	settingsWindow = new electron.BrowserWindow({
+	settingsWindow = new BrowserWindow({
 		frame:false,
 		height:250,
 		width:200,
